@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Scheduler</title>
+
+    <meta charset="utf-8">
+    
+	<!-- daypilot libraries -->
+    <script src="js/daypilot-all.min.js?v=2848" type="text/javascript"></script>
+
+</head>
+
+
+<body>
+
+<!-- important -->
+<div style="float:left; width: 150px;">
+    <div id="nav"></div>
+</div>
+
+<div style="margin-left: 150px;">
+    <div id="dp"></div>
+</div>
+
+<!-- important -->
+
+<script type="text/javascript">
+    var nav = new DayPilot.Navigator("nav");
+
+    nav.showMonths = 3;
+    nav.skipMonths = 3;
+    nav.selectMode = "week";
+    nav.freeHandSelectionEnabled = true;
+    nav.onTimeRangeSelected = function(args) {
+        console.log(args);
+        dp.startDate = args.start;
+        dp.update();
+    };
+    nav.onBeforeCellRender = function(args) {
+        if (args.cell.isCurrentMonth) {
+            args.cell.cssClass = "current-month";
+        }
+    };
+    nav.init();
+    
+    var dp = new DayPilot.Calendar("dp");
+    load_Schedule();
+
+    // view
+    dp.startDate = nav.selectionStart;
+    dp.viewType = "Week";
+    dp.allDayEventHeight = 25;
+    dp.initScrollPos = 9 * 40;
+    dp.moveBy = 'Full';
+    dp.businessBeginsHour = 8;
+    dp.businessEndsHour = 21;
+    dp.headerDateFormat = "d MMMM, yyyy";
+    dp.init();
+
+    
+    // bubble, with async loading
+    /*dp.bubble = new DayPilot.Bubble({
+        onLoad: function(args) {
+            var ev = args.source;
+            args.async = true;  // notify manually using .loaded()
+            
+            // simulating slow server-side load
+            setTimeout(function() {
+                args.html = "testing bubble for: <br>" + ev.text();
+                args.loaded();
+            }, 500);
+        }
+    });*/
+    
+    /*dp.contextMenu = new DayPilot.Menu({
+        items: [
+        {text:"Show event ID", onclick: function() {alert("Event value: " + this.source.value());} },
+        {text:"Show event text", onclick: function() {alert("Event text: " + this.source.text());} },
+        {text:"Show event start", onclick: function() {alert("Event start: " + this.source.start().toStringSortable());} },
+        {text:"Delete", onclick: function() { dp.events.remove(this.source); } }
+    ]});*/
+
+    // event moving
+    /*dp.onEventMoved = function (args) {
+        dp.message("Moved: " + args.e.text());
+    };*/
+    
+    // event resizing
+    /*dp.onEventResized = function (args) {
+        dp.message("Resized: " + args.e.text());
+    };*/
+
+    // event creating
+    dp.onTimeRangeSelected = function (args) {
+
+        var e = new DayPilot.Event({
+            start: args.start,
+            end: args.end,
+            barColor: "#008000",
+            text: "Available"
+        });
+        dp.events.add(e);
+        dp.clearSelection();
+        dp.message("Slot Created");
+
+        saveSchedule(args.start,args.end);
+    };
+
+
+    function saveSchedule(Start, End)
+    {
+        var xhttp = new XMLHttpRequest();
+        var value = Start+" "+End;
+        xhttp.open("GET","schedule.php?value="+value,true);
+        xhttp.send();
+    }
+
+    function load_Schedule()
+    {
+        var file = "schedule.txt";
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                    var text = rawFile.responseText;
+                    text = text.split("\n");
+
+                    for(var i=0;i<text.length-1;i++)
+                    {
+                        text[i] = text[i].split(" ");
+
+                        var e = new DayPilot.Event({
+                            start: text[i][0],
+                            end: text[i][1],
+                            barColor: "#008000",
+                            text: "Available"
+                        });
+                        dp.events.add(e);
+                    }
+
+
+                }
+            }
+        }
+        rawFile.send(null);
+    }
+
+
+    /*dp.onTimeRangeDoubleClicked = function(args) {
+        alert("DoubleClick: start: " + args.start + " end: " + args.end + " resource: " + args.resource);
+    };*/
+    
+    /*dp.onEventClick = function(args)
+    {
+        var e = dp.events.find(args.data.id);
+        dp.events.remove(e).notify();
+    };*/
+
+
+        /*var e = new DayPilot.Event({
+            start: new DayPilot.Date("2013-03-25T12:00:00"),
+            end: new DayPilot.Date("2013-03-25T12:00:00").addHours(3),
+            id: DayPilot.guid(),
+            text: "Special event"
+        });
+        dp.events.add(e);*/
+
+</script>
+
+
+
+</body>
+</html>
+

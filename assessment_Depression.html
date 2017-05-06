@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Self Assessment</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <h4>বিষন্নতা পরিমাপক<br>
+        নিচের বিবৃতি গুলো পড়ে গত এক সপ্তাহের মধ্যে এই বিবৃতি গুলো আপনার ক্ষেত্রে কতটা প্রযোজ্য তা বিবৃতির পার্শ্বের সম্ভাব্য পাঁচটি ্উত্তরের যেটি প্রযোজ্য সেটির ঘরে টিক(√) চিহ্ন দিয়ে নির্দেশ করুন। আপনাকে সম্ভাব্য এই পাঁচটি উত্তর থেকে যে কোন একটিকে বেছে নিতে হবে এবং সবগুলো প্রশ্নের উত্তর দিতে হবে। অনুগ্রহ করে লক্ষ্য করুন সবগুলো বিবৃতির উত্তর দিয়েছেন কি না।</h4>
+
+    <form action="assessmentAnswer_Depression.php">
+        <div> <br><br></div>
+
+
+        <h4>1.  	আমার অশান্তি লাগে।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q1" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q1" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q1" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q1" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q1" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>2.  	ইদানিং আমি মনমরা থাকি।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q2" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q2" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q2" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q2" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q2" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>3.  	আমার ভবিষ্যত অন্ধকার।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q3" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q3" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q3" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q3" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q3" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>4.  	ভবিষ্যতে আমার অবস্থা দিন দিন আরো খারাপ হবে।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q4" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q4" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q4" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q4" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q4" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>5. 	 আমার সব শেষ হয়ে গেছে।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q5" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q5" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q5" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q5" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q5" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>6.  	আমি মনে করি যে, জীবনটা বর্তমানে খুব বেশী কষ্টকর।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q6" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q6" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q6" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q6" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q6" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>7. 	 বর্তমানে আমি অনুভব করি যে মানুষ হিসাবে আমি সম্পূর্ণ ব্যর্থ</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q7" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q7" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q7" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q7" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q7" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>8.  	আমি কোথাও আনন্দ-ফুর্তি পাই না।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q8" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q8" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q8" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q8" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q8" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>9.  	নিজেকে খুব ছোট মনে হয়।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q9" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q9" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q9" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q9" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q9" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>10. 	সবকিছুতে আমার আতœবিশ্বাস কমে গেছে।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q10" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q10" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q10" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q10" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q10" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>11.  	আমার মনে হয় মানুষ আমাকে করুণা করে।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q11" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q11" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q11" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q11" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q11" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>12.  	জীবনটা অর্থহীন।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q12" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q12" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q12" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q12" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q12" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>13.  	প্রায়ই আমার কান্না পায়।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q13" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q13" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q13" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q13" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q13" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>14.  	আমি প্রায়ই বিরক্ত বোধ করি।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q14" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q14" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q14" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q14" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q14" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>15.  	আমি কোন কিছুতেই আগ্রহ পাই না।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q15" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q15" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q15" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q15" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q15" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>16.  	আমি ইদানিং চিন্তা করতে ও সিদ্ধান্ত নিতে পারি না।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q16" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q16" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q16" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q16" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q16" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>17.  	আমি আজকাল অনেক কিছুতেই মনোযোগ দিতে পারি না।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q17" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q17" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q17" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q17" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q17" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>18.  	আমি আগের মতো মনে রাখতে পারি না।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q18" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q18" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q18" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q18" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q18" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>19.  	আমি দূর্বল বোধ করি এবং অল্পতেই ক্লান্ত হয়ে পড়ি।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q19" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q19" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q19" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q19" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q19" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>20.  	আমি এখন কম ঘুমাই।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q20" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q20" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q20" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q20" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q20" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>21.  	আমি এখন বেশী ঘুমাই।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q21" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q21" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q21" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q21" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q21" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>22. 	 আমার মেজাজ খিঁটখিঁটে হয়ে গেছে।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q22" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q22" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q22" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q22" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q22" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>23.  	আমার ক্ষুধা কমে গেছে।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q23" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q23" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q23" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q23" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q23" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>24.  	আমার ক্ষুধা বেড়ে গেছে।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q24" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q24" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q24" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q24" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q24" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>25.  	আমার ওজন কমে গেছে (ইচ্ছাকৃতভাবে ওজন নিয়ন্ত্রণের চেষ্টা করার ফলে নয়)।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q25" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q25" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q25" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q25" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q25" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>26. 	আমার মনে হয় যে আমার কাজকর্মের গতি কমে গেছে।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q26" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q26" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q26" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q26" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q26" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>27.  	হাসির কোন ঘটনা ঘটলেও আমি আর হাসতে পারি না।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q27" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q27" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q27" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q27" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q27" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>28.  	যৌন বিষয়ে আমার আগ্রহ কমে গেছে।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q28" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q28" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q28" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q28" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q28" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>29.  	সামাজিক কাজকর্মে আগের মতো অংশগ্রহণ করতে পারি না।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q29" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q29" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q29" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q29" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q29" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+
+        <h4>30.  	শিক্ষা বা পেশাগত কাজকর্ম আগের মতো করতে পারি না।</h4>
+        <div class="radio" >
+            <label><input type="radio" name="q30" required value="0">একেবারেই প্রযোজ্য নয় (০)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q30" required value="1">প্রযোজ্য নয় (১)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q30" required value="2">মাঝামাঝি (২)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q30" required value="3">কিছুটা প্রযোজ্য (৩)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="q30" required value="4">পুরোপুরি প্রযোজ্য (৪)</label>
+        </div>
+        <div> <br><br></div>
+
+
+
+        <button type="submit" class="btn btn-default">Submit</button>
+        <div> <br><br></div>
+    </form>
+</div>
+
+</body>
+</html>

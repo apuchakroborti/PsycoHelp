@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scheduler</title>
+
+    <meta charset="utf-8">
+
+    <!-- daypilot libraries -->
+    <script src="js/daypilot-all.min.js?v=2848" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</head>
+
+
+<body>
+
+<!-- important -->
+<div style="float:left; width: 150px;">
+    <div id="nav"></div>
+</div>
+
+<div style="margin-left: 150px;">
+    <div id="dp"></div>
+</div>
+
+<!-- important -->
+
+<script type="text/javascript">
+    var nav = new DayPilot.Navigator("nav");
+
+    nav.showMonths = 3;
+    nav.skipMonths = 3;
+    nav.selectMode = "week";
+    nav.freeHandSelectionEnabled = true;
+    nav.onTimeRangeSelected = function(args) {
+        console.log(args);
+        dp.startDate = args.start;
+        dp.update();
+    };
+    nav.onBeforeCellRender = function(args) {
+        if (args.cell.isCurrentMonth) {
+            args.cell.cssClass = "current-month";
+        }
+    };
+    nav.init();
+
+    var dp = new DayPilot.Calendar("dp");
+    load_Schedule();
+
+    // view
+    dp.startDate = nav.selectionStart;
+    dp.viewType = "Week";
+    dp.allDayEventHeight = 25;
+    dp.initScrollPos = 9 * 40;
+    dp.moveBy = 'Full';
+    dp.businessBeginsHour = 8;
+    dp.businessEndsHour = 21;
+    dp.headerDateFormat = "d MMMM, yyyy";
+    dp.eventResizeHandling = "Disabled";
+    dp.init();
+
+
+    // event creating
+    dp.onTimeRangeSelected = function (args)
+    {
+        dp.clearSelection();
+
+    };
+
+
+
+
+    function load_Schedule()
+    {
+        var file = "schedule.txt";
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                    var text = rawFile.responseText;
+                    text = text.split("\n");
+
+                    for(var i=0;i<text.length-1;i++)
+                    {
+                        text[i] = text[i].split(" ");
+
+                        var e = new DayPilot.Event({
+                            start: text[i][0],
+                            end: text[i][1],
+                            barColor: "#008000",
+                            text: "Available"
+                        });
+                        dp.events.add(e);
+                    }
+
+
+                }
+            }
+        }
+        rawFile.send(null);
+    }
+
+    var sDate;
+    var eDate;
+
+    dp.onEventClick = function(args)
+    {
+        if(args.e.data.text=='Unavailable') return;
+
+        $('#myModal').modal('show');
+        sDate = args.e.start();
+        eDate = args.e.end();
+
+
+        args.e.data.text = 'Unavailable';
+        args.e.data.barColor = "#FF0000";
+        dp.events.update(args.e).notify();
+
+    };
+
+    function done_Function()
+    {
+
+        var name = $('#name').val();
+        var num = $('#num').val();
+        var value = name+" "+num+" "+sDate+" "+eDate;
+
+        save(value);
+
+    }
+
+    function save(value)
+    {
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.open("GET","appointment.php?value="+value,true);
+        xhttp.send();
+
+    }
+
+
+
+</script>
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Confirm</h4>
+            </div>
+
+            <div class="col-xs-6">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name">
+
+                <label for="num">Number:</label>
+                <input type="text" class="form-control" id="num">
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-5 col-xs-12"></div>
+
+            <div class="modal-footer">
+                <button onclick="done_Function()" type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
+
